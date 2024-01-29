@@ -6,10 +6,27 @@ class TaskTracer {
   private todoView: TodoView = new TodoView();
 
   constructor() {
-    // Initialization logic will go here
+    this.attachEventListeners();
   }
 
-  // Methods for todo functionality will be added here
+  private attachEventListeners(): void {
+    const addButton = document.getElementById('addButton');
+    if (addButton) {
+      addButton.addEventListener('click', () => this.addTodo());
+    }
+  }
+
+  private addTodo(): void {
+    const todoInput = document.getElementById('todoInput') as HTMLInputElement;
+    if (todoInput && todoInput.value) {
+      const newTodo = new Todo(Date.now(), todoInput.value);
+      this.todos.push(newTodo);
+      this.todoView.render(this.todos);
+      todoInput.value = ''; // Clear the input field
+    }
+  }
+
+  // Implement more methods for complete and delete
 }
 
 new TaskTracer();

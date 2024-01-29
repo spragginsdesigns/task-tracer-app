@@ -1,11 +1,7 @@
-var Todo = /** @class */ (function () {
-    function Todo(id, text, completed) {
-        if (completed === void 0) { completed = false; }
+export class Todo {
+    constructor(id, text, completed = false) {
         this.id = id;
         this.text = text;
         this.completed = completed;
     }
-    return Todo;
-}());
-export { Todo };
-//# sourceMappingURL=todo.js.map
+}
