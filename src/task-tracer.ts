@@ -9,12 +9,16 @@ class TaskTracer {
     this.attachEventListeners();
   }
 
-  private attachEventListeners(): void {
-    const addButton = document.getElementById('addButton');
-    if (addButton) {
-      addButton.addEventListener('click', () => this.addTodo());
-    }
+private attachEventListeners(): void {
+  const form = document.getElementById('task-form');
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevents the page from refreshing
+      this.addTodo();
+    });
   }
+}
+
 
   private addTodo(): void {
     const todoInput = document.getElementById('todoInput') as HTMLInputElement;

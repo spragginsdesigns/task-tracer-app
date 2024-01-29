@@ -1,5 +1,5 @@
-import { Todo } from "./models/todo";
-import { TodoView } from "./views/todoView";
+import { Todo } from "./models/todo.js";
+import { TodoView } from "./views/todoView.js";
 class TaskTracer {
     constructor() {
         this.todos = [];
@@ -7,9 +7,12 @@ class TaskTracer {
         this.attachEventListeners();
     }
     attachEventListeners() {
-        const addButton = document.getElementById('addButton');
-        if (addButton) {
-            addButton.addEventListener('click', () => this.addTodo());
+        const form = document.getElementById('task-form');
+        if (form) {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevents the page from refreshing
+                this.addTodo();
+            });
         }
     }
     addTodo() {

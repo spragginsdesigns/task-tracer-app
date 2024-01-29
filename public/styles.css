@@ -5,41 +5,44 @@
     box-sizing: border-box;
 }
 
+/* Style the body */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
+    padding-top: 40px;
+    /* Add padding to ensure the form is not right at the top */
 }
 
+/* Center the form and the task list container */
 #app {
-    background: white;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
+/* Style the form */
+#task-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Style the input field */
 input[type="text"] {
-    width: calc(100% - 90px);
+    flex-grow: 1;
+    /* Input takes up remaining space */
     height: 40px;
     padding: 5px;
-    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    margin-right: 10px;
     font-size: 16px;
 }
 
+/* Style the 'Add Task' button */
 button {
-    width: 80px;
+    width: 100px;
     height: 40px;
     background: #5cb85c;
     color: white;
@@ -53,25 +56,28 @@ button:hover {
     opacity: 0.9;
 }
 
-ul {
-    list-style: none;
+/* Style the task list */
+#todoList {
     margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+    /* Remove bullet points */
 }
 
-ul li {
-    padding: 10px;
+/* Style individual task items */
+#todoList li {
     background: #f9f9f9;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    border: 1px solid #eee;
+    margin-top: 8px;
+    /* Add space between items */
+    padding: 10px;
+    text-align: left;
+    /* Align text to the left */
 }
 
-ul li:hover {
-    background: #f0f0f0;
-}
+/* Add classes title1 and p1 to center their alignment on the page */
 
-ul li .checkbox {
-    margin-right: 5px;
+.title1, .p1 {
+    text-align: center;
+    padding: 10px;
 }
-
-/* Add styles for your checkbox or 'complete' button if you have one */

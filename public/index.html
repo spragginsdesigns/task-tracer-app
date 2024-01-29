@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input id="todoInput" type="text" placeholder="Enter a task" />
-    <button id="addButton">Add Task</button>
+    <h1 class="title1">Task Tracer</h1>
+    <p class="p1">Keep track of your tasks</p>
+    <!-- Horizontal Line to seperate content -->
+    <hr />
+    <form id="task-form">
+      <input id="todoInput" type="text" placeholder="Enter a task" />
+      <button id="addButton" type="submit">Add Task</button>
+    </form>
     <ul id="todoList"></ul>
 
     <script type="module" src="/dist/task-tracer.js"></script>
