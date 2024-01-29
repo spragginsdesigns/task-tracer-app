@@ -1,5 +1,5 @@
-import { Todo } from "./models/todo.js";
-import { TodoView } from "./views/todoView.js";
+import { Todo } from "./models/todo";
+import { TodoView } from "./views/todoView";
 class TaskTracer {
     constructor() {
         this.todos = [];
